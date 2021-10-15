@@ -40,7 +40,6 @@ class operations{
 		if(head == null) 
 		{
 			head=newnode;
-			tail=newnode;
 		}
 		else {
 			/*
@@ -94,6 +93,13 @@ class operations{
 
 	}
 
+
+	public void pop() {
+		this.head=this.head.next;
+	}
+
+
+
 }
 
 
@@ -133,7 +139,14 @@ class LinkList {
 
 	}
 
+	public void deleteFirstNode() {
+		addDataStart();
+		link.pop();
+		System.out.println("\nafter deleting first element: ");
+		link.print();
 
+
+	}
 
 }
 
@@ -150,7 +163,7 @@ public	class LinkListMain{
 		System.out.println("Press 1 to add data at start");
 		System.out.println("Press 2 to add data at end");
 		System.out.println("Press 3 to insert data in between");
-		
+		System.out.println("Press 4 to delete first node");
 		int input=sc.nextInt();
 
 		switch (input) {
@@ -176,7 +189,13 @@ public	class LinkListMain{
 		case 3:
 
 			obj.insertInBetewwn();
-			break;		
+			break;	
+
+		case 4:
+
+			obj.deleteFirstNode();
+			break;	
+
 
 		default:
 			System.out.println("Invalid Choice");
@@ -184,5 +203,4 @@ public	class LinkListMain{
 		}
 
 	}
-
 }
